@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Role</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Edit Role</h1>
+    <form th:action="@{/roles/update/{id}(id=${role.id})}" th:object="${role}" method="post">
+        <div class="form-group">
+            <label for="roleName">Role Name</label>
+            <input type="text" class="form-control" id="roleName" th:field="*{roleName}" placeholder="Enter role name">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</body>
+</html>
